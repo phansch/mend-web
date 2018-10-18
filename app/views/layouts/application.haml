@@ -21,6 +21,7 @@
         %ul.navbar-nav.mr-auto
           = active_link_to t('home.show.page_title'), root_path, wrap_tag: :li, wrap_class: 'nav-item', class: 'nav-link'
           = active_link_to t('home.how_it_works.page_title'), '/how-it-works', wrap_tag: :li, wrap_class: 'nav-item', class: 'nav-link'
+        = link_to t('login'), user_github_omniauth_authorize_path, class: 'btn btn-secondary'
     .container
       .row
         .col-sm
