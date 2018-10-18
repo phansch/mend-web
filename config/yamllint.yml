@@ -1,0 +1,11 @@
+---
+extends: default
+
+ignore: |
+  /node_modules/
+  /config/secrets.yml
+  /vendor/
+
+rules:
+  line-length:
+    max: 120
