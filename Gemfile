@@ -15,9 +15,10 @@ gem 'devise'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
 
 # Frontend
+gem 'active_link_to'
+gem 'bootstrap', '~> 4.1.3'
 gem 'haml-rails'
 gem 'sass-rails', '~> 5.0'
-gem 'semantic-ui-sass'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 

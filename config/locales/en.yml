@@ -31,4 +31,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  site_title: mend-rs
+  toggle_navigation: Toggle navigation
+  home:
+    show:
+      page_title: Home
+    how_it_works:
+      page_title: How it works

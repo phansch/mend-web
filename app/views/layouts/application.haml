@@ -2,12 +2,26 @@
 %html
   %head
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }/
-    %title MendWeb
+    %title= t('site_title')
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    - if notice || alert
+      .container-fluid
+        %p.notice= notice
+        %p.alert= alert
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      = link_to t('site_title'), root_path, class: 'navbar-brand'
+      %button.navbar-toggler{ type: 'button', data: { toggle: :collapse, target: '#navbar-supported-content' }, aria: { controls: 'navbar-supported-content', expanded: 'false', label: t('toggle_navigation') } }
+        %span.navbar-toggler-icon
+
+      .collapse.navbar-collapse#navbar-supported-content
+        %ul.navbar-nav.mr-auto
+          = active_link_to t('home.show.page_title'), root_path, wrap_tag: :li, wrap_class: 'nav-item', class: 'nav-link'
+          = active_link_to t('home.how_it_works.page_title'), '/how-it-works', wrap_tag: :li, wrap_class: 'nav-item', class: 'nav-link'
+    .container
+      .row
+        .col-sm
+          = yield
