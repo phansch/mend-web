@@ -6,12 +6,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.2'
 
 gem 'dotenv-rails'
+gem 'octokit'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 
 # Authentication and Authorization
 gem 'devise'
+gem 'jwt'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
 
 # Frontend

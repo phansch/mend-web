@@ -42,3 +42,8 @@ module ActiveSupport
     fixtures :all
   end
 end
+module ActionDispatch
+  class IntegrationTest
+    include AroundEachTest
+  end
+end

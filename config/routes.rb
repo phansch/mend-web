@@ -15,5 +15,10 @@ Rails.application.routes.draw do
     get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
+  post '/event_receiver', to: 'events#create'
+  get '/config', to: 'installations#create', constraints: { setup_action: 'install' }
+  get '/config', to: 'installations#update', constraints: { setup_action: 'update' }
+  resources :installations, only: :edit
+
   root to: 'home#show'
 end
