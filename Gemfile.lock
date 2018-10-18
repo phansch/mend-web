@@ -244,6 +244,8 @@ GEM
     selenium-webdriver (3.14.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    semantic-ui-sass (2.4.0.1)
+      sass (>= 3.2)
     sexp_processor (4.11.0)
     simplecov (0.16.1)
       docile (~> 1.1)
@@ -311,6 +313,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
+  semantic-ui-sass
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)

@@ -1,4 +1,27 @@
-# README
+# mend-web
+
+## Setup
+
+All dependencies should be set up after running:
+
+```console
+bin/setup
+```
+
+This is only tested on Ubuntu Linux, may not work on MacOSX and will not work on
+Windows.
+
+To confirm that everying is working:
+
+```console
+rake test test:system
+```
+
+To start the server locally:
+
+```console
+rails s -p 3000
+```
 
 ## RIIR
 
