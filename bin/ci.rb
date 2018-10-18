@@ -7,6 +7,7 @@ build = CI::Build.new
 
 if ENV['RUN'] == 'test'
   build.run_task('test')
+  build.run_task('test:system')
   build.run_task('lint:haml')
   build.run_task('lint:rubocop')
   build.run_task('lint:cane')
