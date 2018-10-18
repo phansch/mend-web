@@ -1,0 +1,7 @@
+- if flash.present?
+  #flash-messages
+    - flash.each do |type, message|
+      .alert.alert-dismissable{ class: "alert-#{type}", role: :alert }
+        = message
+        %button.close{ type: :button, data: { dismiss: :alert }, aria: { label: 'Close' } }
+          %span{ aria: { hidden: true } } &times;

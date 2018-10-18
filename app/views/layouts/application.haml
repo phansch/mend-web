@@ -8,11 +8,7 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    - if notice || alert
-      .container-fluid
-        %p.notice= notice
-        %p.alert= alert
-    %nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
       = link_to t('site_title'), root_path, class: 'navbar-brand'
       %button.navbar-toggler{ type: 'button', data: { toggle: :collapse, target: '#navbar-supported-content' }, aria: { controls: 'navbar-supported-content', expanded: 'false', label: t('toggle_navigation') } }
         %span.navbar-toggler-icon
@@ -28,4 +24,5 @@
     .container
       .row
         .col-sm
+          = render partial: 'shared/flashes'
           = yield
