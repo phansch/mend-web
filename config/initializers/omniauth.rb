@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+  provider :github, ENV.fetch('GITHUB_KEY'), ENV.fetch('GITHUB_SECRET')
 end
