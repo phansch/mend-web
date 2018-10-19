@@ -48,3 +48,12 @@ Metrics/MethodLength:
 Metrics/LineLength:
   Max: 100
   AllowURI: true
+
+# The Minitest::Test class does not support `assert_not`, but I still want to
+# use it in Rails. Therefore, this lint is disabled.
+Rails/RefuteMethods:
+  Enabled: false
+
+# 😑😑😑😑
+Style/AsciiComments:
+  Enabled: false

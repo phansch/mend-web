@@ -4,6 +4,7 @@ ENV['RAILS_ENV'] ||= 'test'
 ENV['TEST_RUN'] ||= 'true'
 
 require 'simplecov'
+
 SimpleCov.start 'rails' do
   add_filter 'lib/tasks/lint.rake'
   add_filter 'app/jobs/application_job.rb'
@@ -17,6 +18,7 @@ end
 
 require_relative '../config/environment'
 require 'rails/test_help'
+require 'minitest/focus'
 
 DatabaseCleaner.strategy = :transaction
 DatabaseCleaner.clean_with(:truncation)
