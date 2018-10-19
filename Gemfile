@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.2'
 
 gem 'dotenv-rails'
+gem 'faktory_worker_ruby', require: false
 gem 'octokit'
 gem 'pg'
 gem 'puma', '~> 3.11'
@@ -57,5 +58,6 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 
+  gem 'minitest-focus'
   gem 'simplecov', require: false
 end
