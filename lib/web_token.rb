@@ -5,9 +5,7 @@ require 'jwt'
 
 # Generates a JWT to authenticate as GitHub installation
 class WebToken
-  DEFAULT_PATH = Rails.root.join('mend-rs-dev.2018-10-18.private-key.pem')
-
-  def initialize(pem_path = DEFAULT_PATH)
+  def initialize(pem_path = ENV.fetch('GITHUB_PEM_PATH'))
     # Private key contents
     # private_pem = File.read(YOUR_PATH_TO_PEM)
     private_pem = File.read(pem_path)

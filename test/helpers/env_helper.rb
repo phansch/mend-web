@@ -5,7 +5,8 @@ class EnvHelper
   def self.with_env(name, val)
     old_val = ENV[name]
     ENV[name] = val
-    yield
+    result = yield
     ENV[name] = old_val
+    result
   end
 end
