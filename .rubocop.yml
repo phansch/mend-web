@@ -54,6 +54,5 @@ Metrics/LineLength:
 Rails/RefuteMethods:
   Enabled: false
 
-# 😑😑😑😑
 Style/AsciiComments:
   Enabled: false
