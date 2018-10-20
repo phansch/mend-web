@@ -7,14 +7,14 @@ ruby '2.5.2'
 
 gem 'dotenv-rails'
 gem 'faktory_worker_ruby', require: false
-gem 'octokit'
+gem 'octokit', require: false
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 
 # Authentication and Authorization
 gem 'devise'
-gem 'jwt'
+gem 'jwt', require: false
 gem 'omniauth-github', github: 'intridea/omniauth-github'
 
 # Frontend
@@ -64,4 +64,5 @@ group :test do
 
   gem 'minitest-focus'
   gem 'simplecov', require: false
+  gem 'webmock', require: false
 end

@@ -14,4 +14,17 @@ class InstallationTest < ActiveSupport::TestCase
       assert_equal 'some_token', Installation.last.access_token
     end
   end
+
+  test '.find_in_github' do
+    client_mock = Minitest::Mock.new
+    client_mock.expect(
+      :find_installations,
+      [{ app_id: 123 }],
+      [{ accept: 'application/vnd.github.machine-man-preview+json' }]
+    )
+    Octokit::Client.stub(:new, client_mock) do
+      result = Installation.find_in_github(123)
+      assert_equal({ app_id: 123 }, result)
+    end
+  end
 end

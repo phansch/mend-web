@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: %i[developer github]
 
   # Add emails of GitHub users that should be Admins
+  # FIXME(#7) Move whitelist to ENV
   ADMIN_WHITELIST = %w[
     dev@phansch.net
   ].freeze
