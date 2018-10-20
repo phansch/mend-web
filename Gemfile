@@ -16,6 +16,7 @@ gem 'rails', '~> 5.2.1'
 gem 'devise'
 gem 'jwt', require: false
 gem 'omniauth-github', github: 'intridea/omniauth-github'
+gem 'pundit'
 
 # Frontend
 gem 'active_link_to'
