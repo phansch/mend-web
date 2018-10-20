@@ -14,7 +14,7 @@ group :red_green_refactor, halt_on_fail: true do
     watch(%r{^test/test_helper\.rb$}) { 'test' }
   end
 
-  guard :rubocop do
+  guard :rubocop, cli: '--parallel' do
     watch(/.+\.rb$/)
     watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
   end

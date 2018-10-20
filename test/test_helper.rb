@@ -16,9 +16,10 @@ SimpleCov.start 'rails' do
   add_filter 'app/controllers/admin/'
 end
 
+require 'minitest/focus'
+require 'webmock/minitest'
 require_relative '../config/environment'
 require 'rails/test_help'
-require 'minitest/focus'
 
 DatabaseCleaner.strategy = :transaction
 DatabaseCleaner.clean_with(:truncation)

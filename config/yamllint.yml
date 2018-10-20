@@ -5,6 +5,7 @@ ignore: |
   /node_modules/
   /config/secrets.yml
   /vendor/
+  /vcr_cassettes/
 
 rules:
   line-length:
