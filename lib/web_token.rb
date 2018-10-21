@@ -5,9 +5,13 @@ require 'jwt'
 
 # Generates a JWT to authenticate as GitHub installation
 class WebToken
-  def initialize(pem_path = ENV.fetch('GITHUB_PEM_PATH'))
-    private_pem = File.read(pem_path)
-    @private_key = OpenSSL::PKey::RSA.new(private_pem)
+  # Setup the ENV variable via
+  #
+  # ```shell
+  # export GITHUB_PEM=`cat path/to/file.pem`
+  # ```
+  def initialize
+    @private_key = OpenSSL::PKey::RSA.new(ENV.fetch('GITHUB_PEM'))
   end
 
   def gen(issue_time: Time.now.to_i)
