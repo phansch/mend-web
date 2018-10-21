@@ -26,7 +26,8 @@ class UserTest < ActiveSupport::TestCase
 
   test '.from_omniauth already existing' do
     User.from_omniauth(fakeauth('dev@phansch.net'))
-    User.from_omniauth(fakeauth('dev@phansch.net'))
-    assert_equal 1, User.count
+    assert_no_difference ['User.count'] do
+      User.from_omniauth(fakeauth('dev@phansch.net'))
+    end
   end
 end

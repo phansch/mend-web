@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   before_action :validate_signature
 
   def create
+    authorize :event, :create
     event = request.env['HTTP_X_GITHUB_EVENT']
     data = request.body.read
     EventConsumer.new(event, data).eat

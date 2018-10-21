@@ -16,6 +16,7 @@ gem 'rails', '~> 5.2.1'
 gem 'devise'
 gem 'jwt', require: false
 gem 'omniauth-github', github: 'intridea/omniauth-github'
+gem 'pundit'
 
 # Frontend
 gem 'active_link_to'
@@ -57,7 +58,6 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'database_cleaner'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'

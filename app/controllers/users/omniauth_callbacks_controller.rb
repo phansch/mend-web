@@ -3,6 +3,7 @@
 module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def github # rubocop:disable Metrics/AbcSize
+      authorize :omniauth_callback, :github?
       @user = User.from_omniauth(request.env['omniauth.auth'])
 
       if @user.persisted?

@@ -108,7 +108,6 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.4)
-    database_cleaner (1.7.0)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     devise (4.5.0)
@@ -256,6 +255,8 @@ GEM
       pry (~> 0.10)
     public_suffix (3.0.3)
     puma (3.12.0)
+    pundit (2.0.0)
+      activesupport (>= 3.0.0)
     rack (2.0.5)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -385,7 +386,6 @@ DEPENDENCIES
   cane
   capybara (>= 2.15)
   chromedriver-helper
-  database_cleaner
   devise
   dotenv-rails
   faktory_worker_ruby
@@ -402,6 +402,7 @@ DEPENDENCIES
   pg
   pry-byebug
   puma (~> 3.11)
+  pundit
   rails (~> 5.2.1)
   rubocop
   sass-rails (~> 5.0)

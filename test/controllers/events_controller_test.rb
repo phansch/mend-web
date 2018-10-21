@@ -6,7 +6,7 @@ require 'event_consumer'
 require 'minitest/mock'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
-  test 'should :unauthorized on invalid signature' do
+  test 'should return :unauthorized on invalid signature' do
     EnvHelper.with_env('WEBHOOK_SECRET', 'mysecret') do
       post event_receiver_url
       assert_response :unauthorized
