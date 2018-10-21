@@ -10,13 +10,14 @@ class Installation < ApplicationRecord
   validates :external_id, presence: true
   validates :access_token, presence: true, uniqueness: true
 
+  belongs_to :user
   # client.list_app_installation_repositories
 
-  def self.create_from_installation_id(id)
+  def self.create_from_installation_id(id, user)
     jwt = WebToken.new.gen
     client = Octokit::Client.new(bearer_token: jwt)
     token = client.create_app_installation_access_token(id)[:token]
-    create!(external_id: id, access_token: token)
+    create!(external_id: id, access_token: token, user: user)
   end
 
   def self.find_in_github(installation_id)
