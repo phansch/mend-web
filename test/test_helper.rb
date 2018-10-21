@@ -21,6 +21,8 @@ require 'webmock/minitest'
 require_relative '../config/environment'
 require 'rails/test_help'
 
+WebMock.disable_net_connect!(allow_localhost: true)
+
 module AroundEachTest
   def before_setup
     OmniAuth.config.test_mode = true
