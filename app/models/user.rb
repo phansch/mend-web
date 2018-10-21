@@ -4,6 +4,8 @@
 class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: %i[developer github]
 
+  has_one :installation, dependent: :destroy
+
   # Add emails of GitHub users that should be Admins
   # FIXME(#7) Move whitelist to ENV
   ADMIN_WHITELIST = %w[
