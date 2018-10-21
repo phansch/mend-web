@@ -35,6 +35,10 @@ Lint/HandleExceptions:
   Exclude:
     - test/**/*_test.rb
 
+Metrics/AbcSize:
+  Exclude:
+    - test/**/*_test.rb
+
 Metrics/BlockLength:
   Exclude:
     - config/routes.rb
