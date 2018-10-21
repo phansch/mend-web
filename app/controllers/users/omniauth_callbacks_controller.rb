@@ -2,6 +2,8 @@
 
 module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+    # skip_before_action :verify_authorized
+
     def github # rubocop:disable Metrics/AbcSize
       skip_authorization
       @user = User.from_omniauth(request.env['omniauth.auth'])
