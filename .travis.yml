@@ -16,7 +16,8 @@ rvm:
 
 branches:
   only:
-    - master
+    - staging
+    - trying
 
 services:
   - postgresql
