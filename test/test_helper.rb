@@ -39,6 +39,6 @@ end
 
 module ActionDispatch
   class IntegrationTest
-    include AroundEachTest
+    include Devise::Test::IntegrationHelpers
   end
 end

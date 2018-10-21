@@ -33,6 +33,7 @@
 en:
   site_title: mend-rs
   toggle_navigation: Toggle navigation
+  not_authorized: You are not authorized to perform this action.
   home:
     show:
       page_title: Home
