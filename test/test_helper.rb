@@ -21,30 +21,22 @@ require 'webmock/minitest'
 require_relative '../config/environment'
 require 'rails/test_help'
 
-DatabaseCleaner.strategy = :transaction
-DatabaseCleaner.clean_with(:truncation)
-
 module AroundEachTest
   def before_setup
-    DatabaseCleaner.start
     OmniAuth.config.test_mode = true
     super
-  end
-
-  def after_teardown
-    super
-    DatabaseCleaner.clean
   end
 end
 
 module ActiveSupport
   class TestCase
-    include AroundEachTest
-
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     fixtures :all
+
+    include AroundEachTest
   end
 end
+
 module ActionDispatch
   class IntegrationTest
     include AroundEachTest

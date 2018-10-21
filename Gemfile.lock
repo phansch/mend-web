@@ -108,7 +108,6 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.4)
-    database_cleaner (1.7.0)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     devise (4.5.0)
@@ -387,7 +386,6 @@ DEPENDENCIES
   cane
   capybara (>= 2.15)
   chromedriver-helper
-  database_cleaner
   devise
   dotenv-rails
   faktory_worker_ruby
