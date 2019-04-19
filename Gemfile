@@ -21,7 +21,7 @@ gem 'pundit'
 # Frontend
 gem 'active_link_to'
 gem 'administrate'
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'haml-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
